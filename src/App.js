@@ -25,7 +25,7 @@ class App extends Component {
 
         let users = this.state.users.map((user, i) => {
             return <li id = "lii"
-            key = { i } > { user.name } < /li>
+            key = { i } > { user.name } </li>
         })
 
         return ( < div className = "App" >
