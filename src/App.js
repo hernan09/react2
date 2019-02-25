@@ -1,43 +1,59 @@
 import React, { Component } from 'react';
+import Nav from './components/Nav'
+import Peli from './components/Divpeli'
 
 
 import './App.css';
 
+
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            users: []
+            show: false,
+            show2: true
+
+
+
+
         }
-    }
-    componentDidMount() {
-        fetch('http://localhost:4000/product').then(res => res.json()).then(users => {
+        this.aparecerPeli = this.aparecerPeli.bind(this)
 
-            let users2 = users.users
-            this.setState({
-                users: users2
-            })
+    }
+
+    aparecerPeli() {
+        this.setState({
+            show: !this.state.show,
+            show2: !this.state.show2
         })
 
+
+
     }
+
+
+
+
+
+
     render() {
-        console.log(this.state.users)
-
-        let users = this.state.users.map((user, i) => {
-            return <li id = "lii"
-            key = { i } > { user.name } </li>
-        })
 
         return ( < div className = "App" >
-
             <
-            ul > { users } < /ul>
+            Nav > < /Nav>  {
+            this.state.show2 && <
+            button type = "button"
+            onClick = {
+                this.aparecerPeli
+            }
+            id = 'btn'
+            className = "btn btn-primary btn-lg btn-block" > Warbringer < /button>}
 
+            {
+                this.state.show && < Peli > < /Peli>} </
+                div >
+            );
+        }
 
-            <
-            /div>
-        );
     }
-}
-
-export default App;
+    export default App;
