@@ -85,6 +85,9 @@ console.log(peli.url)
        <iframe src={this.state.url} width="100%" height="400px" allowFullScreen></iframe>
 
        </div>
+       <hr></hr>
+       {this.state.show2 && <button id="btnfot" onClick={this.aparecerFoter} className="btn btn-light btn-lg btn-block">Volver</button>}
+       <hr></hr>
        <div id="posfot">
           <p><strong>C</strong>opirygt all reserved</p>
 

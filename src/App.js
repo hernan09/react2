@@ -47,10 +47,13 @@ class App extends Component {
                 this.aparecerPeli
             }
             id = 'btn'
-            className = "btn btn-primary btn-lg btn-block" > Warbringer < /button>}
+            className = "btn btn-light btn-lg btn-block" > Warbringer < /button>}
 
             {
-                this.state.show && < Peli > < /Peli>} </
+                this.state.show && < Peli > < /Peli>}
+
+                <
+                /
                 div >
             );
         }

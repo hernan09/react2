@@ -3,7 +3,31 @@ body {
     height: 100%;
 }
 
+#nav {
+    background: #EB5757;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #EB5757);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #EB5757);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    height: 180px;
+    padding: 0;
+}
+
+#logo {
+    border-radius: 50%;
+    height: 150px;
+    width: auto;
+    margin: auto;
+}
+
+#h3 {
+    color: black;
+}
+
 #btn {
+    background-color: brown;
     width: 50%;
     margin: auto;
     margin-top: 5%;
@@ -44,29 +68,34 @@ body {
     bottom: 0;
     margin-top: 60%;
     height: 80%;
-    background-color: rgb(16, 142, 201);
+    background: #EB5757;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #EB5757);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #EB5757);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*animcaion*/
-    animation: animationFramess ease 1s;
+    animation: animationFramess ease 1.5s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
     animation-fill-mode: forwards;
     /*when the spec is finished*/
-    -webkit-animation: animationFramess ease 1s;
+    -webkit-animation: animationFramess ease 1.5s;
     -webkit-animation-iteration-count: 1;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-fill-mode: forwards;
     /*Chrome 16+, Safari 4+*/
-    -moz-animation: animationFramess ease 1s;
+    -moz-animation: animationFramess ease 1.5s;
     -moz-animation-iteration-count: 1;
     -moz-transform-origin: 50% 50%;
     -moz-animation-fill-mode: forwards;
     /*FF 5+*/
-    -o-animation: animationFramess ease 1s;
+    -o-animation: animationFramess ease 1.5s;
     -o-animation-iteration-count: 1;
     -o-transform-origin: 50% 50%;
     -o-animation-fill-mode: forwards;
     /*Not implemented yet*/
-    -ms-animation: animationFramess ease 1s;
+    -ms-animation: animationFramess ease 1.5s;
     -ms-animation-iteration-count: 1;
     -ms-transform-origin: 50% 50%;
     -ms-animation-fill-mode: forwards;
@@ -77,6 +106,13 @@ body {
     height: 400px;
     margin: auto;
     margin-top: 8%;
+    background-color: black;
+}
+
+#btnfot {
+    width: 30%;
+    margin: auto;
+    margin-top: 5%;
     background-color: black;
 }
 
@@ -92,32 +128,32 @@ body {
 }
 
 #peli {
-    background-color: rgb(8, 8, 8);
+    background-image: url('http://localhost:4000/img');
     color: white;
     width: 100%;
     height: 450px;
     /*animacion*/
-    animation: animationFrames ease 2s;
+    animation: animationFrames ease 1.2s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
     animation-fill-mode: forwards;
     /*when the spec is finished*/
-    -webkit-animation: animationFrames ease 2s;
+    -webkit-animation: animationFrames ease 1.2s;
     -webkit-animation-iteration-count: 1;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-fill-mode: forwards;
     /*Chrome 16+, Safari 4+*/
-    -moz-animation: animationFrames ease 2s;
+    -moz-animation: animationFrames ease 1.2s;
     -moz-animation-iteration-count: 1;
     -moz-transform-origin: 50% 50%;
     -moz-animation-fill-mode: forwards;
     /*FF 5+*/
-    -o-animation: animationFrames ease 2s;
+    -o-animation: animationFrames ease 1.2s;
     -o-animation-iteration-count: 1;
     -o-transform-origin: 50% 50%;
     -o-animation-fill-mode: forwards;
     /*Not implemented yet*/
-    -ms-animation: animationFrames ease 2s;
+    -ms-animation: animationFrames ease 1.2s;
     -ms-animation-iteration-count: 1;
     -ms-transform-origin: 50% 50%;
     -ms-animation-fill-mode: forwards;
@@ -139,7 +175,7 @@ body {
 
 #cartas:hover {
     transform: scale(0.95);
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 #img {
@@ -302,3 +338,6 @@ body {
         -ms-transform: translate(0px, 0px);
     }
 }
+
+
+/*logo animacion*/
