@@ -1,33 +1,44 @@
 import React ,{Component} from 'react'
+import {Link} from 'react-router-dom'
+
+
+
 
 
 class Nav extends Component{
   constructor(){
     super();
      this.state={
-       imgs:[]
+
      }
 
 
 
   }
-componentDidMount(){
-    fetch('http://localhost:4000/img').then(resp=>resp.json()).then(img=>{
-     this.setState({
-        imgs:img.img[0].src
-     })
-       console.log(img.img[0].src)
-    })
-}
+
 
 render(){
 
     return(
-        <nav id="nav" className="navbar navbar-expand-lg navbar-dark ">
+      <nav className="navbar navbar-expand-lg navbar-dark " id="nav">
 
-            <img id="logo" className="logo" src={this.state.imgs} alt="" />
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-       </nav>
+        <div className="collapse navbar-collapse" id="navbarColor02">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link className="nav-link" to="/">Inicio</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/pelis">Pelis</Link>
+            </li>
+
+          </ul>
+
+  </div>
+</nav>
 
 
 

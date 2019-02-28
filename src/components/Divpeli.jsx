@@ -32,7 +32,7 @@ class peli extends Component{
 
   })
 
-console.log(peli.url)
+
 
  }
 
@@ -54,7 +54,7 @@ console.log(peli.url)
 
 
 
-  render(){
+render(){
 
  let pelis=this.state.pelis.map((peli,i)=>{
   return(
@@ -82,9 +82,10 @@ console.log(peli.url)
      {this.state.show2 && <footer id="footer">
        <div id="divfot">
 
-       <iframe src={this.state.url} width="100%" height="400px" allowFullScreen></iframe>
+       <iframe src={this.state.url} width="100%" height="400px" ></iframe>
 
        </div>
+
        <hr></hr>
        {this.state.show2 && <button id="btnfot" onClick={this.aparecerFoter} className="btn btn-light btn-lg btn-block">Volver</button>}
        <hr></hr>
