@@ -16,7 +16,8 @@ body {
 }
 
 #otro {
-    width: 25%;
+    width: 100%;
+    height: 100%;
     margin: auto;
     margin-top: 10%;
     animation: animationFramess ease 1s;
@@ -45,8 +46,26 @@ body {
     -ms-animation-fill-mode: forwards;
 }
 
-#otro>p {
-    width: 25%;
+#otro>#div2 {
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    margin-top: 20%;
+    background: #EB5757;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #EB5757);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #EB5757);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#otro>h2 {
+    width: 50%;
+    margin: auto;
+}
+
+#otro>#div2>p {
+    width: 50%;
     margin: auto;
 }
 
