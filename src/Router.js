@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Peli from './components/Divpeli'
 import Nav from './components/Nav'
 import Otro from "./components/Otro";
+import Login from './components/Login'
 
 
 const Routes = () => ( <
@@ -18,6 +19,9 @@ const Routes = () => ( <
     /> <
     Route exact path = "/pelis"
     component = { Peli }
+    /> <
+    Route exact path = "/login"
+    component = { Login }
     />
 
 

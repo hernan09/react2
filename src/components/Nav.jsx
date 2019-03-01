@@ -1,61 +1,47 @@
-import React ,{Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
+import { Menu, Icon } from 'antd';
 
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
-
-
-class Nav extends Component{
-  constructor(){
-    super();
-     this.state={
-
-     }
-
-
-
+class Meenu extends React.Component {
+  state = {
+    current: 'mail',
   }
 
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key,
+    });
+  }
 
-render(){
+  render() {
+    return (
+      <Menu
+        onClick={this.handleClick}
+        selectedKeys={[this.state.current]}
+        mode="horizontal"
+      >
+        <Menu.Item key="mail">
+          <Icon type="mail" />Navigation One
+        </Menu.Item>
 
-    return(
-      <nav className="navbar navbar-expand-lg navbar-dark " id="nav">
+        <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />Navigation Three - Submenu</span>}>
+          <MenuItemGroup title="Item 1">
+            <Menu.Item key="setting:1" ><Link to="/pelis"></Link>Pelis</Menu.Item>
+            <Menu.Item key="setting:2"><Link to="/"></Link>Inicio</Menu.Item>
+          </MenuItemGroup>
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarColor02">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">Inicio</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/pelis">Pelis</Link>
-            </li>
-
-          </ul>
-
-  </div>
-</nav>
-
-
-
-
-    )
+        </SubMenu>
+        <Menu.Item key="alipay">
+          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+        </Menu.Item>
+      </Menu>
+    );
+  }
 }
 
-
-}
-
-
-
-
-
-
-
-
-
-export default Nav
-
+export default Meenu
