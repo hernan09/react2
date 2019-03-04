@@ -3,6 +3,7 @@ import React ,{Component} from 'react'
 
 
 
+
 class peli extends Component{
     constructor(){
         super();
@@ -10,7 +11,9 @@ class peli extends Component{
          pelis:[],
          show2:false,
          show3:true,
-         url:[]
+         url:[],
+         nombrePeli:[]
+
 
 
 
@@ -18,6 +21,7 @@ class peli extends Component{
         }
 
     this.aparecerFoter=this.aparecerFoter.bind(this)
+
     }
 
  aparecerFoter(peli){
@@ -50,17 +54,22 @@ class peli extends Component{
      })
    })
 
+
+
+
 }
+
 
 
 
 render(){
 
+console.log(this.state.nombrePeli)
  let pelis=this.state.pelis.map((peli,i)=>{
   return(
-    <div id='cartas' onClick={()=>this.aparecerFoter(peli)} className='col-md-4' key={i} >
-      <div className='card-header'><p>{peli.name}</p>
-        <div className='card-body' >
+    <div id='cartas' onClick={()=>this.aparecerFoter(peli)} className='col-md-4' key={i}>
+      <div ><p>{peli.name}</p>
+        <div >
 
           <img id="img"  src={peli.img}  alt=""/>
 
@@ -75,11 +84,21 @@ render(){
  return(
 
   <div id="contenedor">
+
      {this.state.show3 && <div id='peli'>
-       <div >{pelis}</div>
+       <div >{pelis} <h4 style={{ color: 'black' }}>{this.state.nombrePeli}</h4></div>
+
+
+
      </div>}
 
+
      {this.state.show2 && <footer id="footer">
+       <div><blockquote class="blockquote text-center">
+         <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+         <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+       </blockquote></div>
+
        <div id="divfot">
 
        <iframe src={this.state.url} width="100%" height="400px" ></iframe>

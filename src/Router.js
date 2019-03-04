@@ -8,6 +8,9 @@ import Otro from "./components/Otro";
 import Login from './components/Login'
 
 
+
+
+
 const Routes = () => ( <
     Router >
     <
@@ -22,6 +25,9 @@ const Routes = () => ( <
     /> <
     Route exact path = "/login"
     component = { Login }
+    /> <
+    Route exact path = "/pelis/:id"
+    component = { Peli }
     />
 
 
