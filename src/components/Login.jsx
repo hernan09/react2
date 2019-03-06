@@ -11,9 +11,30 @@ function callback(key) {
 
 
 class NormalLoginForm extends Component {
+  constructor(){
+      super()
+      this.state={
+          name:"",
+          pass:""
+      }
+  }
+
+
+
+
+
     handleSubmit = (e) => {
         e.preventDefault();
-       console.log('asdasd')
+        console.log(e.target[0].value)
+        console.log(e.target[1].value)
+
+    }
+    onChangeInput(e){
+      this.setState({
+          name:e.target[0].value,
+          pass:e.target[1].value
+      })
+
 
     }
 
@@ -23,6 +44,7 @@ class NormalLoginForm extends Component {
 
     render() {
 
+
         return (
 
         <div id="login" className="card-body">
@@ -31,12 +53,12 @@ class NormalLoginForm extends Component {
                         <Form style={{marginBottom:200}} onSubmit={this.handleSubmit} className="login-form">
                             <Form.Item>
 
-                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                                <Input prefix={<Icon type="user" value={this.state.name} refs="nameInput" onChange={this.onChangeInput} style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
 
                             </Form.Item>
                             <Form.Item>
 
-                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                                <Input prefix={<Icon type="lock" refs="passInput" onChange={this.onChangeInput} style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
 
                             </Form.Item>
                             <Form.Item>

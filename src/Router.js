@@ -6,6 +6,7 @@ import Peli from './components/Divpeli'
 import Nav from './components/Nav'
 import Otro from "./components/Otro";
 import Login from './components/Login'
+import Video from './components/Video'
 
 
 
@@ -28,6 +29,9 @@ const Routes = () => ( <
     /> <
     Route exact path = "/pelis/:id"
     component = { Peli }
+    /> <
+    Route exact path = "/video"
+    component = { Video }
     />
 
 

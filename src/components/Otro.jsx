@@ -5,6 +5,10 @@ import { Divider } from 'antd';
 import { Carousel } from 'antd';
 import { Popover} from 'antd';
 import { Modal, Button } from 'antd';
+import { Affix } from 'antd';
+
+
+
 
 const { Meta } = Card;
 
@@ -71,19 +75,27 @@ this.setState({
 
 		let pelis=this.state.pelis.map((peli,i)=>{
 			return(
-             <img id="carro" src={peli.img} key={i} style={{width:300,height:250}}></img>
+             <img id="carro" src={peli.img} key={i} style={{width:300,height:250}} ></img>
 			)
 		})
 
         return(
+            
+            <div id="fondo" style={{marginTop:100}}>
 
-            <div id="fondo" style={{height:500,marginTop:100}}>
+                <Row gutter={48} style={{ height: 200,marginTop:-50}} >
 
-                <Row gutter={48} style={{ height: 200,marginTop:-50}} id="row1">
                     <Col  span={24}>
-                        <blockquote className="blockquote text-center">
-                            <h1>Warbringer</h1><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae facere aperiam facilis totam qui. Voluptas sapiente fuga quos nemo ipsum amet officiis suscipit sequi reprehenderit fugit, debitis sunt molestias quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae tempora aliquam, impedit nulla maxime sed minima atque laborum, iusto distinctio eligendi. Molestias nam voluptatem repellat dolores blanditiis minus odit corrupti!</p>
-							<hr></hr>
+
+                        <blockquote className="blockquote text-center" id="carrousel">
+
+						<div id="separadorcarro">
+
+								<h2 ><strong>W</strong>arbringer</h2><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae facere aperiam facilis totam qui. Voluptas sapiente fuga quos nemo ipsum amet officiis suscipit sequi reprehenderit fugit, debitis sunt molestias quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae tempora aliquam, impedit nulla maxime sed minima atque laborum, iusto distinctio eligendi. Molestias nam voluptatem repellat dolores blanditiis minus odit corrupti!</p>
+								<hr></hr>
+
+						</div>
+
 							<Carousel autoplay  effect="fade">
 							{pelis}
 
@@ -93,81 +105,84 @@ this.setState({
 
 
                 </Row>
-                <Row gutter={48}>
+				<div id="postcarro">
+					<Row gutter={48}>
 
-							<Col span={8}>
-						<hr/>
-								<blockquote className="blockquote text-center">
-							<Popover placement="right" content={content} title="Guldan" trigger="hover">
-								<Card
-									hoverable
-									style={{ width: 300, margin: 'auto' }}
-									cover={pelis[3]}
-								>
-									<Meta style={{width:300}}
-										title="Europe Street beat"
-										description="www.instagram.com"
-									/>
+						<Col span={24}>
+							<hr />
+							<blockquote id="row2" className="blockquote text-center">
+								<Popover placement="right" content={content} title="Guldan" trigger="hover">
+									<Card
+										hoverable
+										style={{ width: 300, margin: 'auto' }}
+										cover={pelis[3]}
+									>
+										<Meta style={{ width: 300 }}
+											title="Europe Street beat"
+											description="www.instagram.com"
+										/>
 
 
-								</Card>
-							</Popover>
+									</Card>
+								</Popover>
 
-               </blockquote>
-								</Col>
-							<Col span={8}>
-						<hr />
-								<blockquote className="blockquote text-center">
-							<Popover placement="top" content={content2} title="Silvana" trigger="hover">
-								<Card
-									hoverable
-									style={{ width: 300, margin: 'auto' }}
-									cover={pelis[6]}
-								>
-									<Meta style={{ width: 300 }}
-										title="Europe Street beat"
-										description="www.instagram.com"
-									/>
-								</Card>
-							</Popover>
+							</blockquote>
 
-								</blockquote>
 
-							</Col>
+							<hr />
+							<blockquote className="blockquote text-center">
+								<Popover placement="left" content={content2} title="Silvana" trigger="hover">
+									<Card
+										hoverable
+										style={{ width: 300, margin: 'auto' }}
+										cover={pelis[6]}
+									>
+										<Meta style={{ width: 300 }}
+											title="Europe Street beat"
+											description="www.instagram.com"
+										/>
+									</Card>
+								</Popover>
 
-                    <Col span={8}>
-						<hr />
-								<blockquote className="blockquote text-center">
-							<Popover placement="left"  content={content3} title="Durotan" trigger="hover">
-								<Card
-									hoverable
-									style={{ width: 300, margin: 'auto' }}
-									cover={pelis[5]}
-								>
-									<Meta style={{ width: 300 }}
-										title="Europe Street beat"
-										description="www.instagram.com"
-									/>
-								</Card>
-							</Popover>
+							</blockquote>
 
-								</blockquote>
 
-								</Col>
-                </Row>
+
+
+							<hr />
+							<blockquote className="blockquote text-center">
+								<Popover placement="right" content={content3} title="Durotan" trigger="hover">
+									<Card
+										hoverable
+										style={{ width: 300, margin: 'auto' }}
+										cover={pelis[5]}
+									>
+										<Meta style={{ width: 300 }}
+											title="Europe Street beat"
+											description="www.instagram.com"
+										/>
+									</Card>
+								</Popover>
+
+							</blockquote>
+
+						</Col>
+					</Row>
+				</div>
+
                  <Row gutter={48}>
 
                       <Col span={24}>
-                        <blockquote className="blockquote text-center">
+                        <blockquote className="blockquote text-center" id="textohorde">
                             <h3>Team Horde</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ad error nihil consectetur debitis. Quidem, dignissimos! Illo debitis numquam voluptates officia repellat, ullam optio impedit, est sequi enim soluta sint! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquid consequatur aut sunt accusantium corrupti enim tenetur dolore. Odit accusamus reiciendis doloremque nisi autem, beatae ad tempora atque id at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam necessitatibus corrupti enim odio impedit laborum! Quo, dignissimos. Dolorum sit at numquam, harum id velit ex odio saepe nobis fuga iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus quasi quo voluptatum aut soluta sint, assumenda tempora illo fugiat? A libero vel esse hic necessitatibus sapiente architecto enim laborum.</p>
                         </blockquote>
 
                       </Col>
-							       <Col span={24}>
+							<Col span={24}>
 
 							<div className="jumbotron" style={{backgroundColor:'white',color:'black'}}>
 							   <blockquote className="blockquote text-center">
-								<h1 className="display-3">Hello, world!</h1>
+								<h1 className="display-3">Warbringer</h1>
 								<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 
 									<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -176,7 +191,7 @@ this.setState({
 									</p>
 								<Modal
 									visible={visible}
-									title="Title"
+									title="Durotan"
 									onOk={this.handleOk}
 									onCancel={this.handleCancel}
 									footer={[
@@ -193,7 +208,7 @@ this.setState({
                            </div>
 						<div className="jumbotron" style={{ backgroundColor: 'white', color: 'black' }}>
 							<blockquote className="blockquote text-center">
-								<h1 className="display-3">Hello, world!</h1>
+								<h1 className="display-3">For the Horde</h1>
 								<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 
 								<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -202,11 +217,11 @@ this.setState({
 						</div>
 
 
-								<div>
+								<div id="ultimo">
 
-									<Divider orientation="left">Warnbringer</Divider>
+									<Divider orientation="left" style={{color:'white'}}>Warnbringer</Divider>
 									<p style={{width:500,margin:'auto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-									<Divider orientation="right">Lord Of War</Divider>
+									<Divider orientation="right" style={{color:'white'}}>Lord Of War</Divider>
 									<p style={{width:500,margin:'auto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
 								</div>
 

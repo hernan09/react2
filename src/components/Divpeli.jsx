@@ -1,4 +1,7 @@
 import React ,{Component} from 'react'
+import { Affix } from 'antd';
+
+
 
 
 
@@ -12,7 +15,8 @@ class peli extends Component{
          show2:false,
          show3:true,
          url:[],
-         nombrePeli:[]
+         nombrePeli:[],
+         img:[]
 
 
 
@@ -30,7 +34,8 @@ class peli extends Component{
  this.setState({
     show2:!this.state.show2,
     show3:!this.state.show3,
-     url:peli.url
+    url:peli.url,
+    img:peli.img
 
 
 
@@ -45,7 +50,7 @@ class peli extends Component{
 
 
  componentDidMount(){
-   fetch('http://localhost:4000/product').then(resp=>resp.json()).then(pelis=>{
+   fetch('http://localhost:4000/peliculas').then(resp=>resp.json()).then(pelis=>{
 
 
 
@@ -67,16 +72,26 @@ render(){
 console.log(this.state.nombrePeli)
  let pelis=this.state.pelis.map((peli,i)=>{
   return(
-    <div id='cartas' onClick={()=>this.aparecerFoter(peli)} className='col-md-4' key={i}>
-      <div ><p>{peli.name}</p>
-        <div >
 
-          <img id="img"  src={peli.img}  alt=""/>
 
+
+          <div id='cartas' onClick={() => this.aparecerFoter(peli)} className='col-md-4' key={i}>
+
+            <div ><p>{peli.name}</p>
+              <div >
+
+                <img id="img" src={peli.img} alt="" />
+
+              </div>
             </div>
-         </div>
 
-      </div>
+
+
+          </div>
+
+
+
+
   )
 
 })
@@ -85,12 +100,15 @@ console.log(this.state.nombrePeli)
 
   <div id="contenedor">
 
-     {this.state.show3 && <div id='peli'>
-       <div >{pelis} <h4 style={{ color: 'black' }}>{this.state.nombrePeli}</h4></div>
+     {this.state.show3 &&<div id="scrol">
+       <div id='peli'>
+         <div >{pelis} <h4 style={{ color:'white' }}>{this.state.nombrePeli}</h4></div>
 
 
 
-     </div>}
+       </div>
+
+     </div> }
 
 
      {this.state.show2 && <footer id="footer">
@@ -101,7 +119,7 @@ console.log(this.state.nombrePeli)
 
        <div id="divfot">
 
-       <iframe src={this.state.url} width="100%" height="400px" ></iframe>
+       <iframe src={this.state.url} poster={this.state.img} width="100%" height="400px" ></iframe>
 
        </div>
 

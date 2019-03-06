@@ -1,6 +1,11 @@
 #meenu {
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    height: 200px;
+    background-image: url("/imagenes/walpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 9999;
 }
 
 #row1 {
@@ -71,6 +76,26 @@
     height: 600px;
 }
 
+#carrousel {
+    width: 100%;
+    margin: auto;
+}
+
+#separadorcarro {
+    width: 60%;
+    margin: auto;
+}
+
+#postcarro {
+    width: 60%;
+    margin: auto;
+}
+
+#textohorde {
+    width: 60%;
+    margin: auto;
+}
+
 #otro>blockquote>h2 {
     color: black;
 }
@@ -125,7 +150,19 @@
     width: 100%;
 }
 
+#scrol {
+    height: 800px;
+    width: 100%;
+    overflow: scroll;
+}
+
 #footer {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -190,12 +227,21 @@
     color: white;
 }
 
+#contenedor {
+    height: 100%;
+    background-image: url("/imagenes/colmillo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 #peli {
     color: white;
     width: 100%;
     height: 450px;
     margin: auto;
     margin-left: 5%;
+    margin-top: 5%;
     /*animacion*/
     animation: animationFramess ease 1s;
     animation-iteration-count: 1;
@@ -251,6 +297,16 @@
 #img2 {
     width: 100%;
     height: 70%;
+}
+
+#ultimo {
+    color: white;
+    height: 400px;
+    width: 100%;
+    background-image: url("/imagenes/colmillo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 
